@@ -14,7 +14,7 @@ python setup.py install
 * Generate API Credentitals (API Key and Password) following this intructions: https://developers.shopbase.com/build-an-app-tutorial/making-your-first-request
 * Check out the Shopbase API endpoints and data that can be manipulated in: https://api-doc.shopbase.com/
 
-## Setup
+## Setup ```pyshopbase::API()```
 ```python
 from pyshopbase import API
 
@@ -46,9 +46,13 @@ r.json
 ```
 ## Resource
 ### products
+#### Retrieves a list of products.
+Coming Soon!
+#### Retrieves a count of products.
+Coming Soon!
+#### Retrieves a single product.
+Coming Soon!
 #### Creates a new product.
-
-
 ```data``` is a dict contains product data to create. For example:
 ```python
 data = {
@@ -71,3 +75,17 @@ the ```response```:
 r.json
 >>> {'product': {'aggregate_data': None, 'body_html': '<strong>Good snowboard!</strong>', 'created_at': '2019-07-03T06:47:50+00:00', 'handle': 'burton-custom-freestyle-151', 'id': 3517212354513... // JSON Data
 ```
+#### Creates a new product variant.
+Comming Soon!
+#### Duplicate product variants.
+Comming Soon!
+#### Updates a product.
+Comming Soon!
+#### Updates a product variant.
+Comming Soon!
+#### Reorder product variants.
+Comming Soon!
+#### Deletes a product.
+Comming Soon!
+#### Delete multi product.
+Comming Soon!
