@@ -76,16 +76,16 @@ r.json
 >>> {'product': {'aggregate_data': None, 'body_html': '<strong>Good snowboard!</strong>', 'created_at': '2019-07-03T06:47:50+00:00', 'handle': 'burton-custom-freestyle-151', 'id': 3517212354513... // JSON Data
 ```
 #### Creates a new product variant.
-Comming Soon!
+Coming Soon!
 #### Duplicate product variants.
-Comming Soon!
+Coming Soon!
 #### Updates a product.
-Comming Soon!
+Coming Soon!
 #### Updates a product variant.
-Comming Soon!
+Coming Soon!
 #### Reorder product variants.
-Comming Soon!
+Coming Soon!
 #### Deletes a product.
-Comming Soon!
+Coming Soon!
 #### Delete multi product.
-Comming Soon!
+Coming Soon!
