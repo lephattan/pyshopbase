@@ -56,6 +56,10 @@ class API:
             url = '{0}products/{1}/{2}.json'.format(self.url, product_id, resource)
             r = requests.get(url, params=data, headers=self.headers, timeout=self.timeout)
             return Response(r)
+        elif resource == "products":
+            url = '{0}{1}.json'.format(self.url, resource)
+            r = requests.get(url, params=data, headers=self.headers, timeout=self.timeout)
+            return Response(r)
         else:
             return False
 
