@@ -4,6 +4,7 @@ class ApiResponse:
         self.json = {}
         self.status = ''
         self.status_code = r.status_code
+        self.headers = r.headers
         if r.status_code == 200:
             self.status = 'success'
             self.json = r.json()
