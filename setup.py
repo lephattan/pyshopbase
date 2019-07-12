@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='pyshopbase',
-    version='0.0.2',
+    version='0.0.4',
     author='Tan Le',
     author_email='tanle2207@gmail.com',
     description="Python Wrapper for Shopbase Api",
@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url='https://github.com/lephattan/pyshopbase',
     packages=setuptools.find_packages(),
-    install_requires = [
+    install_requires=[
         'requests'
     ],
     classifiers=[

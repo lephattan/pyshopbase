@@ -1,5 +1,6 @@
 import requests
 from pyshopbase.response import ApiResponse as Response
+from collections import OrderedDict
 
 name = 'pyshopbase'
 
@@ -55,6 +56,46 @@ class API:
             url = '{0}products/{1}/{2}.json'.format(self.url, product_id, resource)
             r = requests.get(url, params=data, headers=self.headers, timeout=self.timeout)
             return Response(r)
+        elif resource == "products":
+            url = '{0}{1}.json'.format(self.url, resource)
+            r = requests.get(url, params=data, headers=self.headers, timeout=self.timeout)
+            return Response(r)
         else:
             return False
 
+
+class Cache:
+    def __init__(self, limit: int = 250):
+        self.limit = limit
+        self.storage = OrderedDict()
+
+    def store(self, ojb: str, key: str, value):
+        try:
+            self.storage[ojb][key] = value
+        except KeyError:
+            self.storage[ojb] = {key: value}
+        while len(self.storage) > self.limit:
+            print('Cache limit reach. Cleaning up!')
+            self.clearByIndex(0)
+
+    def get(self, ojb: str, key: str):
+        try:
+            return self.storage[ojb][key]
+        except KeyError:
+            return None
+
+    def purge(self):
+        self.storage.clear()
+
+    def clearByIndex(self, index):
+        items = list(self.storage.items())
+        self.storage.pop(items[index][0])
+
+    def clearByName(self, _name):
+        self.storage.pop(_name)
+
+    def setLimit(self, limit: int):
+        self.limit = limit
+
+    def size(self):
+        return len(self.storage)
