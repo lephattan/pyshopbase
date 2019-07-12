@@ -47,10 +47,35 @@ r.json
 ## Resource
 ### products
 #### Retrieves a list of products.
-Coming Soon!
+Retrieves a list of products. This endpoint implements pagination by using links that are provided in the response header ```r.headers```. 
+```python
+r = sbapi.get('products', data=data)
+# GET /admin/products.json
+r.json
+>>> {"products": [{"id": 632910392,"title": "IPod Nano - 8GB"... #JSON Dictionary
+```
+```data``` dict contains query params to filter get products request.
+|||
+|--- |--- |
+|ids|Return only products specified by a comma-separated list of product IDs.|
+|limit|Return up to this many results per page. (default: ```50```, maximum: ```250```)|
+|since_id|Restrict results to after the specified ID.|
+|title|Filter results by product title.|
+|vendor|Filter results by product vendor.|
+|handle|Filter results by product handle.|
+|product_type|Filter results by product type.|
+|collection_id|Filter results by product collection ID.|
+|created_at_min|Show products created after date. (format: 2014-04-25T16:15:47-04:00)|
+|created_at_max|Show products created before date. (format: 2014-04-25T16:15:47-04:00)|
+|updated_at_min|Show products last updated after date. (format: 2014-04-25T16:15:47-04:00)|
+|updated_at_max|Show products last updated before date. (format: 2014-04-25T16:15:47-04:00)|
+|published_at_min|Show products published after date. (format: 2014-04-25T16:15:47-04:00)|
+|published_at_max|Show products published before date. (format: 2014-04-25T16:15:47-04:00)|
+|published_status|Return products by their published status (default: ```any```) ```published```: Show only published products. ```unpublished```: Show only unpublished products. ```any```: Show all products.|
+|fields|Show only certain fields, specified by a comma-separated list of field names.|
+
+
 #### Retrieves a count of products.
-Coming Soon!
-#### Retrieves a single product.
 Coming Soon!
 #### Creates a new product.
 ```data``` is a dict contains product data to create. For example:
