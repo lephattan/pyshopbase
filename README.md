@@ -55,8 +55,9 @@ r.json
 >>> {"products": [{"id": 632910392,"title": "IPod Nano - 8GB"... #JSON Dictionary
 ```
 ```data``` dict contains query params to filter get products request.
-|||
-|--- |--- |
+
+|Param|Description|
+|----|----|
 |ids|Return only products specified by a comma-separated list of product IDs.|
 |limit|Return up to this many results per page. (default: ```50```, maximum: ```250```)|
 |since_id|Restrict results to after the specified ID.|
